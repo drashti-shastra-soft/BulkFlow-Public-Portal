@@ -1,0 +1,191 @@
+﻿@{
+    var canonicalUrl = $"{Context.Request.Scheme}://{Context.Request.Host}{Context.Request.Path}";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="@ViewBag.MetaKeywords" />
+    <meta name="description" content="@ViewBag.MetaDescription" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="@Html.Raw(canonicalUrl)" />
+    <link href="~/css/plugins.css" rel="stylesheet" />
+    <link href="~/css/styles.css" rel="stylesheet" />
+    <link href="~/css/external.css" rel="stylesheet" />
+    <link href="~/css/responsive.css" rel="stylesheet" />
+    <link href="~/css/glightbox.min.css" rel="stylesheet" />
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="preloader"></div>
+    <header class="header-style1 menu_area-light FSTHeader">
+        <div class="navbar-default border-bottom border-color-light-white">
+            <div class="container-fluid px-lg-1-6 px-xl-2-5 px-xxl-2-9">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-12">
+                        <div class="menu_area alt-font">
+                            <nav class="navbar navbar-expand-lg navbar-light p-0">
+                                <div class="navbar-header navbar-header-custom">
+                                    <a href="@Url.Action("Index", "Home")" class="navbar-brand"><img id="logo" src="~/Images/logos/logo.png" class="img-fluid" alt="logo" /></a>
+                                </div>
+                                <div class="navbar-toggler bg-secondary"></div>
+                                <ul class="navbar-nav align-items-lg-center ms-auto" id="nav" style="display: none;">
+                                    <li>
+                                        <a href="@Url.Action("Index", "Home")">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("AboutUs", "Home")">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">Our Products</a>
+                                        <ul>
+                                            <li><a href="@Url.Action("ChemicalRoadTankerLayout", "Home")">Chemical Road Tanker</a></li>
+                                            <li><a href="@Url.Action("ISOTankerLayout", "Home")">ISO Tanker</a></li>
+                                            <li><a href="@Url.Action("IBCOffshoreTankerLayout", "Home")">IBC / Offshore Tanker</a></li>
+                                            <li><a href="@Url.Action("RailTankerLayout", "Home")">Rail Tanker</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Contact", "Home")">Contact Us</a>
+                                    </li>
+                                    <li class="CustomCallNavbar"><a href="tel:+917738406968" class="butn text-white md"><span>Quick Call <i class="fas fa-phone-alt phone-icon"></i></span></a></li>
+                                </ul>
+                                <div class="attr-nav align-items-xl-center ms-xl-auto main-font">
+                                    <ul>
+                                        <li class="d-none d-xl-inline-block"><a href="tel:+917738406968" class="butn text-white md"><span>Quick Call <i class="fas fa-phone-alt phone-icon"></i></span></a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer class="bg-dark">
+        <div class="container py-6 py-lg-8">
+            <div class="row mt-n2-9">
+                <div class="col-md-12 col-lg-5 mt-2-9">
+                    <div class="footer-logo mb-3">
+                        <a href="@Url.Action("Index", "Home")">
+                            <img src="~/images/logos/logo-inner.png" class="img-fluid" alt="Footer Logo" />
+                        </a>
+                    </div>
+                    <p class="text-white mb-1-9 w-lg-75 font-weight-400 display-29 opacity9">Supplying premium spare parts and components for ISO tanks.</p>
+                    <ul class="social-icon-style1">
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12 col-lg-3 mt-2-9">
+                    <h3 class="text-white h5 mb-1-9 no-letter-spacing">Quick Links</h3>
+                    <ul class="footerQuickLinks">
+                        <li><a href="@Url.Action("ChemicalRoadTankerLayout", "Home")">Chemical Road Tanker</a></li>
+                        <li><a href="@Url.Action("ISOTankerLayout", "Home")">ISO Tanker</a></li>
+                        <li><a href="@Url.Action("IBCOffshoreTankerLayout", "Home")">IBC / Offshore Tanker</a></li>
+                        <li><a href="@Url.Action("RailTankerLayout", "Home")">Rail Tanker</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12 col-lg-3 mt-2-9 offset-lg-1">
+                    <h3 class="text-white h5 mb-1-9 no-letter-spacing">Contacts</h3>
+                    <div class="d-flex mb-1-9">
+                        <div class="flex-shrink-0"><img src="~/images/icons/icon-phone.png" alt="..."></div>
+                        <div class="flex-grow-1 ms-3">
+                            <h4 class="mb-1 h6 text-white">Contact Us</h4>
+                            <p class="mb-0 text-white"><a href="tel:+917738406968" class="text-white">+91 77384 06968</a></p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="flex-shrink-0"><img src="~/images/icons/icon-mail.png" alt="..."></div>
+                        <div class="flex-grow-1 ms-3">
+                            <h4 class="mb-1 h6 text-white">Mail Us</h4>
+                            <p class="mb-0 text-white"><a href="mailto:sales@bulk-flo.com" class="text-white">sales@bulk-flo.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-4 border-top border-color-light-white signatureSection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="text-white mb-0">Bulk Flo Agencies LLP &copy; <span class="current-year"></span>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="text-white mb-0 pullRight">Crafted by <a href="https://www.mitsolutions.in/" target="_blank" class="text-secondary white-hover font-weight-500">M iT Solutions</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-top-percentage"><span id="scroll-value"></span></div>
+
+    <a href="https://wa.me/+917738406968" class="whatsapp-button" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/fontawesome.min.js"></script>
+    <script src="~/js/core.min.js"></script>
+    <script src="~/js/main.js"></script>
+    <script src="~/js/glightbox.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const lightbox = GLightbox({
+                selector: '.glightbox',
+                touchNavigation: true,
+                loop: true
+            });
+        });
+    </script>
+
+    <script>
+         function setEqualHeight() {
+            var maxHeight = 0;
+            $('.TestimonialCard').css('height', 'auto'); // Reset height
+            $('.TestimonialCard').each(function () {
+                var thisHeight = $(this).outerHeight();
+                if (thisHeight > maxHeight) {
+                    maxHeight = thisHeight;
+                }
+            });
+            $('.TestimonialCard').css('height', maxHeight + 'px');
+        }
+        $(document).ready(setEqualHeight);
+        $(window).resize(setEqualHeight);
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            var maxHeight = 0;
+
+            // Loop through each h4 inside .seprator-border to find the tallest one
+            $('.seprator-border h4').each(function() {
+                var currentHeight = $(this).outerHeight();
+                if (currentHeight > maxHeight) {
+                    maxHeight = currentHeight;
+                }
+            });
+
+            // Set the height of all h4s to the tallest one
+            $('.seprator-border h4').css('height', maxHeight);
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
